@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View, Image, Touchable, TouchableOpacity, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Screen01 from './screens/screen01'
@@ -11,8 +10,21 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name='Screen01' component={Screen01} options={{headerShown: false}}/>
-                <Stack.Screen name='Screen02' component={Screen02}/>
-                <Stack.Screen name='Screen03' component={Screen03}/>
+                <Stack.Screen name='Screen02' component={Screen02}
+                    options={{
+                        headerTitleStyle: {visibility: 'hidden'},
+                        headerStyle: {
+                            height: 100,
+                        },
+                    }}
+                />
+                <Stack.Screen name='Screen03' component={Screen03}
+                    options={{
+                        headerTitleStyle: {visibility: 'hidden'},
+                        headerStyle: {
+                            height: 100,
+                        },
+                    }}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
